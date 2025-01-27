@@ -2543,5 +2543,3 @@ ImageButton1.MouseButton1Click:Connect(simulateKeyPress1)
 -- Connect the click event to the second button
 ImageButton2.MouseButton1Click:Connect(simulateKeyPress2)
 end)
-
-loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/shiftlock?raw=true"))()
