@@ -1,4 +1,6 @@
-pcall(function()
+print("started")
+
+suc,res = pcall(function()
 	local fake_transparency = 0.8
 
 	local Motors = {
@@ -2527,3 +2529,5 @@ pcall(function()
 	-- Connect the click event to the second button
 	ImageButton2.MouseButton1Click:Connect(simulateKeyPress2)
 end)
+
+print(suc,res)
