@@ -1,4 +1,4 @@
-print("started")
+print("started v0.2")
 
 suc,res = pcall(function()
 	local fake_transparency = 0.8
@@ -184,11 +184,11 @@ suc,res = pcall(function()
 	local LoadedAnimationTable = {}
 
 	local Players = game:GetService("Players")
-	local Player = Players.LocalPlayer
+	local Player = Players:GetPlayers()[1]
 	local RunService = game:GetService("RunService")
 
-	game.Players.LocalPlayer.Character.Archivable = true
-	local FakeCharacter = game.Players.LocalPlayer.Character:Clone()
+	game.Players:GetPlayers()[1].Character.Archivable = true
+	local FakeCharacter = game.Players:GetPlayers()[1].Character:Clone()
 
 	Player.Character:BreakJoints()
 	Player.Character = nil
@@ -201,7 +201,7 @@ suc,res = pcall(function()
 		end
 	end)
 
-	repeat task.wait() until game.Players.LocalPlayer.Character
+	repeat task.wait() until game.Players:GetPlayers()[1].Character
 	task.wait(0.1)
 
 	local RealChar = Player.Character
@@ -317,13 +317,13 @@ suc,res = pcall(function()
 	Bypass = "death"
 	FELOADLIBRARY = {}
 	loadstring(game:GetObjects("rbxassetid://5209815302")[1].Source)()
-	local Player = game:GetService("Players").LocalPlayer
+	local Player = game:GetService("Players"):GetPlayers()[1]
 	local TweenService = game:GetService("TweenService")
 	local Create = FELOADLIBRARY.Create
 
 
 
-	local Player = game:GetService("Players").LocalPlayer
+	local Player = game:GetService("Players"):GetPlayers()[1]
 
 	local ZTfade=false 
 	local ZT=false
@@ -1215,7 +1215,7 @@ suc,res = pcall(function()
 			if hit.Parent:findFirstChild("DebounceHit") ~= nil and hit.Parent.DebounceHit.Value == true then
 				return 
 			end
-			local c = Create("ObjectValue")({Name = "creator", Value = game:service("Players").LocalPlayer, Parent = h})
+			local c = Create("ObjectValue")({Name = "creator", Value = game:service("Players"):GetPlayers()[1], Parent = h})
 			game:GetService("Debris"):AddItem(c, 0.5)
 			if HitSound ~= nil and HitPitch ~= nil then
 				so(HitSound, hit, 1, HitPitch)
@@ -2467,7 +2467,7 @@ suc,res = pcall(function()
 		end
 	end))
 
-	local speaker = game.Players.LocalPlayer
+	local speaker = game.Players:GetPlayers()[1]
 
 	workspace.CurrentCamera:Destroy()  -- Use :Destroy() instead of :remove()
 	wait(0.1)
@@ -2486,7 +2486,7 @@ suc,res = pcall(function()
 	local ImageButton2 = Instance.new("ImageButton")
 
 	-- Parent the ScreenGui to the Player's PlayerGui
-	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.Parent = game.Players:GetPlayers()[1]:WaitForChild("PlayerGui")
 
 	-- Set properties for the first ImageButton
 	ImageButton1.Parent = ScreenGui
